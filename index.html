@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneath the Panic</title>
+    <link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="900" height="600"></canvas>
+        <div class="vignette"></div>
+        <div id="ui">
+            <div id="levelIndicator"></div>
+            <div id="oxygenBar"><div id="oxygenFill"></div></div>
+            <div id="oxygenLabel">OXYGEN</div>
+            <div id="panicBar"><div id="panicFill"></div></div>
+            <div id="panicLabel">PANIC</div>
+            <div id="shadowWarning">THE SHADOW GROWS STRONGER...</div>
+        </div>
+        <div id="titleScreen">
+            <div class="water-line"></div>
+            <div class="game-title">BENEATH THE <span class="glitch-text" data-text="PANIC">PANIC</span></div>
+            <div class="game-subtitle">SURVIVAL GAME</div>
+            <button class="btn" onclick="showInstructions()">BEGIN</button>
+            <button class="btn" onclick="startGame()" style="font-size:12px; padding:10px 30px; margin-top:10px;">SKIP INTRO</button>
+        </div>
+        <div id="instructions">
+            <h2>SURVIVAL GUIDE</h2>
+            <p>
+                <strong>LEVEL 1 - BRIDGE ESCAPE:</strong><br>
+                Use <span class="key">LEFT</span> <span class="key">RIGHT</span> or <span class="key">A</span> <span class="key">D</span> to move.<br>
+                Jump gaps with <span class="key">SPACE</span> or <span class="key">UP</span>.<br>
+                Avoid cracks and falling debris.<br><br>
+                <strong>LEVEL 2 - SINKING:</strong><br>
+                Steer left/right to avoid debris.<br>
+                Watch your oxygen. Stay calm.<br><br>
+                <strong>LEVEL 3 - UNDERWORLD:</strong><br>
+                Explore the ruins. Solve puzzles.<br>
+                <span class="key">E</span> to interact with objects.<br>
+                Face the shadow. Do not run.<br><br>
+                <em>"In panic, we drown. In calm, we survive."</em>
+            </p>
+            <button class="btn" onclick="startGame()">ENTER THE DEPTHS</button>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <h2 id="endTitle">DROWNED IN PANIC</h2>
+            <p id="endText">The water claims another soul. The panic was too much to bear.</p>
+            <button class="btn" onclick="restartGame()">TRY AGAIN</button>
+            <button class="btn" onclick="showTitle()">MENU</button>
+        </div>
+        <div id="victoryScreen" style="display:none;">
+            <h2>BEYOND THE PANIC</h2>
+            <p>You faced the darkness within. The shadow dissipated. You found the surface, not of water, but of understanding. Panic no longer controls you.</p>
+            <button class="btn" onclick="restartGame()">PLAY AGAIN</button>
+            <button class="btn" onclick="showTitle()">MENU</button>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
